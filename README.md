@@ -4,7 +4,7 @@ Project created by Exequiel Mari to accomplish with https://www.qubeyond.com/ Ch
 
 The look and feel and functionality, can be tested in https://codesandbox.io/p/devbox/k9wjkc
 
-The repository can be downloaded in xxxx
+The repository can be downloaded in [Git](https://github.com/exemari/qu-challenge)
 
 ## What did I add in this app?
 
@@ -26,6 +26,8 @@ The repository can be downloaded in xxxx
 
 9- I'm handling some errors using try and catch and throwing some errors
 
+10- I divided the logic into different files like components, utils, api, constants and types. This is to make it much easier to read.
+
 ## Stack and libraries
 
 In this library, I'm using:
@@ -46,7 +48,7 @@ In this library, I'm using:
 
 ### Locally
 
-1- Download the repo
+1- Download the repo https://github.com/exemari/qu-challenge
 
 2- Open the folder in your code editor and execute `yarn i`
 
@@ -64,4 +66,4 @@ Here, in the terminal, you can execute the tests running `yarn test`
 
 ## Authors
 
-- [@emari](https://www.github.com/octokatherine)
+- [@emari](https://www.github.com/exemari)

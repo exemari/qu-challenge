@@ -161,7 +161,7 @@ export const TableJokes = () => {
           </TableHead>
           <tbody>
             {sortedData?.map((row) => (
-              <TableRow key={row.id}>
+              <TableRow key={row.id} data-testid="jokes-row">
                 {columnName.map((col) => (
                   <TableCell aria-label="{row[col]}">
                     {row[col as keyof typeof row] as string}

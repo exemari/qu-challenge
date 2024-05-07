@@ -8,6 +8,12 @@ test("renders Refresh button", () => {
   expect(refreshButton).toBeInTheDocument();
 });
 
+test("Get jokes row", async () => {
+  render(<TableJokes />);
+  const row = await screen.findAllByTestId("jokes-row");
+  expect(row.length).toBe(10);
+});
+
 test("fetchData executed", () => {
   const spyFetchData = jest.spyOn(api, "fetchData");
   render(<TableJokes />);

@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+# QU Challenge
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Project created by Exequiel Mari to accomplish with https://www.qubeyond.com/ Challenge
 
-## Available Scripts
+The look and feel and functionality, can be tested in https://codesandbox.io/p/devbox/k9wjkc
 
-In the project directory, you can run:
+The repository can be downloaded in xxxx
 
-### `npm start`
+## What did I add in this app?
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1- I added the logic to call the api, get 10 random jokes and display them in a table
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2- You can sort the columns
 
-### `npm test`
+3- You can refresh the table and get new results
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+4- You can delete a row (this is not really deleted because there's not an Api to do it)
 
-### `npm run build`
+5- You can add a joke (this is not really added because there's not an Api to do it). We validate that the fields are not empty and we generate a random id.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+6- I added some styles and icons
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+7- I'm saving the state that needs to be shared in the components using React Context.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+8- I added some tests to be sure that the app is working as expected
 
-### `npm run eject`
+9- I'm handling some errors using try and catch and throwing some errors
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Stack and libraries
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+In this library, I'm using:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- React
+- Typescript
+- Javascript
+- Html
+- CSS
+- API Rest
+- Hooks (and Custom Hooks)
+- React context (to save the state)
+- Styled Components (To add some inline styles)
+- React-icons
+- Jest and React testing library
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## How to test it?
 
-## Learn More
+### Locally
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1- Download the repo
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2- Open the folder in your code editor and execute `yarn i`
 
-### Code Splitting
+3- Execute `npm start`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+4- Open your localhost in specified port (e.g. http://localhost:3000/)
 
-### Analyzing the Bundle Size
+- To execute the tests, run `yarn test`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### In Code Sandbox
 
-### Making a Progressive Web App
+You can visualize the code and functionality in https://codesandbox.io/p/devbox/k9wjkc
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Here, in the terminal, you can execute the tests running `yarn test`
 
-### Advanced Configuration
+## Authors
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [@emari](https://www.github.com/octokatherine)

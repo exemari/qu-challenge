@@ -6,6 +6,8 @@ The look and feel and functionality, can be tested in https://codesandbox.io/p/d
 
 The repository can be downloaded in [Git](https://github.com/exemari/qu-challenge)
 
+![Preview](https://github.com/exemari/qu-challenge/blob/main/src/images/image1.png?raw=true)
+
 ## What did I add in this app?
 
 1- I added the logic to call the api, get 10 random jokes and display them in a table
@@ -63,6 +65,8 @@ In this library, I'm using:
 You can visualize the code and functionality in https://codesandbox.io/p/devbox/k9wjkc
 
 Here, in the terminal, you can execute the tests running `yarn test`
+
+![CodeSandbox](https://github.com/exemari/qu-challenge/blob/main/src/images/image2.png?raw=true)
 
 ## Authors
 

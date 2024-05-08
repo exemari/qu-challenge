@@ -30,6 +30,8 @@ The repository can be downloaded in [Git](https://github.com/exemari/qu-challeng
 
 10- I divided the logic into different files like components, utils, api, constants and types. This is to make it much easier to read.
 
+11- Added skeleton to display a kind of "loading" while we wait for the API result.
+
 ## Stack and libraries
 
 In this library, I'm using:
@@ -45,6 +47,7 @@ In this library, I'm using:
 - Styled Components (To add some inline styles)
 - React-icons
 - Jest and React testing library
+- Skeleton from material ui
 
 ## How to test it?
 
@@ -64,7 +67,7 @@ In this library, I'm using:
 
 You can visualize the code and functionality in https://codesandbox.io/p/devbox/k9wjkc
 
-Here, in the terminal, you can execute the tests running `yarn test`
+Here, in the terminal, you can execute it locally running `npm start`or you can execute the tests running `yarn test`
 
 ![CodeSandbox](https://github.com/exemari/qu-challenge/blob/main/src/images/image2.png?raw=true)
 

@@ -4,6 +4,7 @@ import { FiChevronUp, FiChevronDown, FiTrash } from "react-icons/fi";
 import { capitalizeFirstLetter, columnName } from "../utils";
 import { JokesData, JokesContextType } from "../types";
 import { FormJokes } from "./FormJokes";
+import Skeleton from "@mui/material/Skeleton";
 import {
   BUTTON_DELETE,
   BUTTON_REFRESH,
@@ -16,11 +17,14 @@ import { fetchData } from "../api";
 const TableContainer = styled.div`
   max-width: 800px;
   margin: 0 auto;
+  display: contents;
 `;
 
 const Table = styled.table`
   width: 100%;
   border-collapse: collapse;
+  min-width: 400px;
+  min-height: 200px;
 `;
 
 const TableHead = styled.thead`
@@ -139,47 +143,60 @@ export const TableJokes = () => {
     return null;
   };
 
+  const tableContent = (
+    <Table>
+      <TableHead>
+        <TableRow>
+          {columnName.map((col) => (
+            <TableHeader
+              onClick={() => handleSort(col)}
+              key={col}
+              aria-label={capitalizeFirstLetter(col)}
+            >
+              {capitalizeFirstLetter(col)}
+              {renderSortIcon(col)}
+            </TableHeader>
+          ))}
+          <TableHeader> {MESSAGE_ACTIONS}</TableHeader>
+        </TableRow>
+      </TableHead>
+      <tbody>
+        {sortedData?.map((row) => (
+          <TableRow key={row.id} data-testid="jokes-row">
+            {columnName.map((col) => (
+              <TableCell aria-label="{row[col]}">
+                {row[col as keyof typeof row] as string}
+              </TableCell>
+            ))}
+            <TableCell>
+              <DeleteButton
+                onClick={() => handleDeleteRow(row.id)}
+                aria-label={BUTTON_DELETE}
+                title={BUTTON_DELETE}
+              >
+                <FiTrash />
+              </DeleteButton>
+            </TableCell>
+          </TableRow>
+        ))}
+      </tbody>
+    </Table>
+  );
   return (
     <JokesContext.Provider value={{ data, setData }}>
       {error ? <ErrorMessage> {MESSAGE_API_ERROR}</ErrorMessage> : ""}
+
       <TableContainer>
-        <Table>
-          <TableHead>
-            <TableRow>
-              {columnName.map((col) => (
-                <TableHeader
-                  onClick={() => handleSort(col)}
-                  key={col}
-                  aria-label={capitalizeFirstLetter(col)}
-                >
-                  {capitalizeFirstLetter(col)}
-                  {renderSortIcon(col)}
-                </TableHeader>
-              ))}
-              <TableHeader> {MESSAGE_ACTIONS}</TableHeader>
-            </TableRow>
-          </TableHead>
-          <tbody>
-            {sortedData?.map((row) => (
-              <TableRow key={row.id} data-testid="jokes-row">
-                {columnName.map((col) => (
-                  <TableCell aria-label="{row[col]}">
-                    {row[col as keyof typeof row] as string}
-                  </TableCell>
-                ))}
-                <TableCell>
-                  <DeleteButton
-                    onClick={() => handleDeleteRow(row.id)}
-                    aria-label={BUTTON_DELETE}
-                    title={BUTTON_DELETE}
-                  >
-                    <FiTrash />
-                  </DeleteButton>
-                </TableCell>
-              </TableRow>
-            ))}
-          </tbody>
-        </Table>
+        {loading && sortedData ? (
+          <Skeleton
+            variant="rectangular"
+            children={tableContent}
+            animation="pulse"
+          />
+        ) : (
+          tableContent
+        )}
+
         <RefreshButton
           onClick={fetchDataAndUpdateState}
           disabled={loading}
